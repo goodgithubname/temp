@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+eggs/
+*.egg-info/
+pip-wheel-metadata/
+wheels/
+share/python-wheels/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+pytestdebug.log
+coverage.xml
+
+# Pyre, Mypy
+.mypy_cache/
+.pyre/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment / secrets
+.env
+.env.*
+secrets/
+local_settings.py
+instance/
+
+# Database files
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs
+*.log
+logs/
+gunicorn.pid
+
+# Static / media (if generated)
+staticfiles/
+media/
+uploads/
+
+# Docker
+docker-compose.override.yml
+*.dockerignore
+
+# Coverage / report files
+coverage.xml
+report.xml
+junitxml/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# Sphinx docs build
+docs/_build/
+
+# Node / frontend (if present)
+node_modules/
+dist/
+build/
+
+# Misc
+*.bak
+*.swp
+*~.nib
