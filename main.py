@@ -21,7 +21,7 @@ def root():
 def get_device(search: str = Query(..., description="Device name to search for")):
     try:
         response = requests.get(
-            f"{JAMF_BASE_URL}/devices?search={search}",
+            f"{JAMF_BASE_URL}/devices?name={search}",
             auth=HTTPBasicAuth(JAMF_USERNAME, JAMF_API_KEY)
         )
 
