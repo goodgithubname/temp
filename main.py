@@ -39,3 +39,26 @@ def get_device(search: str = Query(..., description="Device name to search for")
 
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+    
+@app.get("/api/serial")
+def get_device_serial(serial: str = Query(..., description="Serial number to search for")):
+    try:
+        response = requests.get(
+            f"{JAMF_BASE_URL}/devices?serialnumber={serial}",
+            auth=HTTPBasicAuth(JAMF_USERNAME, JAMF_API_KEY)
+        )
+
+        if response.status_code != 200:
+            return JSONResponse(status_code=response.status_code, content={
+                "error": f"JAMF API request failed with {response.status_code}"
+            })
+
+        data = response.json()
+        devices = data.get("devices", [])
+        if not devices:
+            return {"message": "No devices found"}
+
+        return devices[0]
+
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
